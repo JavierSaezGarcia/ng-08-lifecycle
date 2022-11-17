@@ -1,0 +1,27 @@
+<h1>{{ nombre }}</h1>
+<!-- Ahora este input como tiene la directiva ngModel ya se comunica con el input en este caso bidireccional 
+es decir si cambio el texto en el input prevalece lo que ponga al valor de la variable nombre y se envia al h1 desde el input
+, si solo llevara corchetes o parentesis solo tomaría el valor de la variable-->
+<input  type="text" 
+[(ngModel)]="nombre"
+placeholder="Hola Mundo">
+<!-- Este boton no hace nada porque no le estoy diciendo a angular que haga algo -->
+<button>
+    Click
+</button>
+<!-- este le dice eh angular dispara ngDoCheck ngAfterContentCheched y ngViewChecked 
+Docheck antes de los cambios y Afetr despues de los cambios y entre medio Viewcheck que lo muestra 
+Llamado inmediatamente después ngOnChanges()de cada ejecución de detección de cambios e inmediatamente después ngOnInit()de la primera ejecución. -->
+<button (click)="guardar()">
+    Click Angular
+</button>
+
+<br>
+<br>
+
+<app-muestra-nombre [nombre]="nombre"></app-muestra-nombre>
+
+<hr>
+<hr>
+<h1>Segundos: {{ segundos }}</h1>
+
